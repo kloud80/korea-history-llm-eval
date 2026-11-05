@@ -1,0 +1,82 @@
+﻿model,developer,developer_country,size_group,scope,n,match,match_other,neutral,opposite,none,match_rate,opposite_rate,none_rate
+Claude Fable 5.1,Anthropic,US,대형,all,1220,328,614,249,29,0,0.7721,0.0238,0.0
+Claude Fable 5.1,Anthropic,US,대형,stance,860,194,395,242,29,0,0.6849,0.0337,0.0
+Claude Fable 5.1,Anthropic,US,대형,fact,360,134,219,7,0,0,0.9806,0.0,0.0
+Claude Opus 5.5,Anthropic,US,중형,all,1220,266,671,255,28,0,0.768,0.023,0.0
+Claude Opus 5.5,Anthropic,US,중형,stance,860,160,420,252,28,0,0.6744,0.0326,0.0
+Claude Opus 5.5,Anthropic,US,중형,fact,360,106,251,3,0,0,0.9917,0.0,0.0
+Claude Sonnet 5.5,Anthropic,US,중형,all,1220,242,662,286,30,0,0.741,0.0246,0.0
+Claude Sonnet 5.5,Anthropic,US,중형,stance,860,150,423,257,30,0,0.6663,0.0349,0.0
+Claude Sonnet 5.5,Anthropic,US,중형,fact,360,92,239,29,0,0,0.9194,0.0,0.0
+Claude Haiku 5.5,Anthropic,US,소형,all,1220,331,541,310,28,10,0.7148,0.023,0.0082
+Claude Haiku 5.5,Anthropic,US,소형,stance,860,235,366,226,23,10,0.6988,0.0267,0.0116
+Claude Haiku 5.5,Anthropic,US,소형,fact,360,96,175,84,5,0,0.7528,0.0139,0.0
+GPT-6 Astra,OpenAI,US,대형,all,1220,427,501,234,58,0,0.7607,0.0475,0.0
+GPT-6 Astra,OpenAI,US,대형,stance,860,266,333,213,48,0,0.6965,0.0558,0.0
+GPT-6 Astra,OpenAI,US,대형,fact,360,161,168,21,10,0,0.9139,0.0278,0.0
+GPT-6.1 Sol,OpenAI,US,중형,all,1220,437,498,234,51,0,0.7664,0.0418,0.0
+GPT-6.1 Sol,OpenAI,US,중형,stance,860,276,331,211,42,0,0.7058,0.0488,0.0
+GPT-6.1 Sol,OpenAI,US,중형,fact,360,161,167,23,9,0,0.9111,0.025,0.0
+GPT-6.1 Terra,OpenAI,US,중형,all,1220,490,410,277,43,0,0.7377,0.0352,0.0
+GPT-6.1 Terra,OpenAI,US,중형,stance,860,311,272,241,36,0,0.6779,0.0419,0.0
+GPT-6.1 Terra,OpenAI,US,중형,fact,360,179,138,36,7,0,0.8806,0.0194,0.0
+GPT-6 Luna,OpenAI,US,소형,all,1220,475,442,260,43,0,0.7516,0.0352,0.0
+GPT-6 Luna,OpenAI,US,소형,stance,860,320,296,204,40,0,0.7163,0.0465,0.0
+GPT-6 Luna,OpenAI,US,소형,fact,360,155,146,56,3,0,0.8361,0.0083,0.0
+Gemini 4 Argon,Google,US,대형,all,1220,380,572,226,41,1,0.7803,0.0336,0.0008
+Gemini 4 Argon,Google,US,대형,stance,860,230,388,205,36,1,0.7186,0.0419,0.0012
+Gemini 4 Argon,Google,US,대형,fact,360,150,184,21,5,0,0.9278,0.0139,0.0
+Gemini 3.8 Flash,Google,US,중형,all,1220,379,572,252,17,0,0.7795,0.0139,0.0
+Gemini 3.8 Flash,Google,US,중형,stance,860,209,402,232,17,0,0.7105,0.0198,0.0
+Gemini 3.8 Flash,Google,US,중형,fact,360,170,170,20,0,0,0.9444,0.0,0.0
+Gemini 3.5 Flash-Lite,Google,US,소형,all,1220,427,472,256,65,0,0.7369,0.0533,0.0
+Gemini 3.5 Flash-Lite,Google,US,소형,stance,860,263,343,201,53,0,0.7047,0.0616,0.0
+Gemini 3.5 Flash-Lite,Google,US,소형,fact,360,164,129,55,12,0,0.8139,0.0333,0.0
+Grok 4.7,xAI,US,대형,all,1220,433,526,186,75,0,0.7861,0.0615,0.0
+Grok 4.7,xAI,US,대형,stance,860,278,380,147,55,0,0.7651,0.064,0.0
+Grok 4.7,xAI,US,대형,fact,360,155,146,39,20,0,0.8361,0.0556,0.0
+Grok 4.3,xAI,US,소형,all,1220,425,507,194,90,4,0.7639,0.0738,0.0033
+Grok 4.3,xAI,US,소형,stance,860,265,381,135,75,4,0.7512,0.0872,0.0047
+Grok 4.3,xAI,US,소형,fact,360,160,126,59,15,0,0.7944,0.0417,0.0
+Solar Pro 4,Upstage,KR,대형,all,1220,571,419,190,38,2,0.8115,0.0311,0.0016
+Solar Pro 4,Upstage,KR,대형,stance,860,422,300,103,33,2,0.8395,0.0384,0.0023
+Solar Pro 4,Upstage,KR,대형,fact,360,149,119,87,5,0,0.7444,0.0139,0.0
+Solar Mini 4,Upstage,KR,소형,all,1220,485,488,192,40,15,0.7975,0.0328,0.0123
+Solar Mini 4,Upstage,KR,소형,stance,860,376,390,68,11,15,0.8907,0.0128,0.0174
+Solar Mini 4,Upstage,KR,소형,fact,360,109,98,124,29,0,0.575,0.0806,0.0
+DeepSeek V4 Pro,DeepSeek,CN,대형,all,1220,561,245,198,86,130,0.6607,0.0705,0.1066
+DeepSeek V4 Pro,DeepSeek,CN,대형,stance,860,356,160,139,82,123,0.6,0.0953,0.143
+DeepSeek V4 Pro,DeepSeek,CN,대형,fact,360,205,85,59,4,7,0.8056,0.0111,0.0194
+DeepSeek V4.1 Flash,DeepSeek,CN,소형,all,1220,411,495,247,65,2,0.7426,0.0533,0.0016
+DeepSeek V4.1 Flash,DeepSeek,CN,소형,stance,860,272,318,219,49,2,0.686,0.057,0.0023
+DeepSeek V4.1 Flash,DeepSeek,CN,소형,fact,360,139,177,28,16,0,0.8778,0.0444,0.0
+Qwen3.8 2.4T-A95B,Alibaba,CN,대형,all,1220,512,404,234,62,8,0.7508,0.0508,0.0066
+Qwen3.8 2.4T-A95B,Alibaba,CN,대형,stance,860,352,273,168,62,5,0.7267,0.0721,0.0058
+Qwen3.8 2.4T-A95B,Alibaba,CN,대형,fact,360,160,131,66,0,3,0.8083,0.0,0.0083
+Qwen3 235B-A22B Instruct,Alibaba,CN,중형,all,1220,443,444,179,130,24,0.727,0.1066,0.0197
+Qwen3 235B-A22B Instruct,Alibaba,CN,중형,stance,860,325,319,101,91,24,0.7488,0.1058,0.0279
+Qwen3 235B-A22B Instruct,Alibaba,CN,중형,fact,360,118,125,78,39,0,0.675,0.1083,0.0
+Qwen3.8 27B,Alibaba,CN,소형,all,1220,432,286,385,99,18,0.5885,0.0811,0.0148
+Qwen3.8 27B,Alibaba,CN,소형,stance,860,326,225,237,56,16,0.6407,0.0651,0.0186
+Qwen3.8 27B,Alibaba,CN,소형,fact,360,106,61,148,43,2,0.4639,0.1194,0.0056
+GLM-5.3,Zhipu AI,CN,대형,all,1220,334,561,223,67,35,0.7336,0.0549,0.0287
+GLM-5.3,Zhipu AI,CN,대형,stance,860,231,357,193,57,22,0.6837,0.0663,0.0256
+GLM-5.3,Zhipu AI,CN,대형,fact,360,103,204,30,10,13,0.8528,0.0278,0.0361
+GLM-5.3 Flash,Zhipu AI,CN,소형,all,1220,346,487,267,85,35,0.6828,0.0697,0.0287
+GLM-5.3 Flash,Zhipu AI,CN,소형,stance,860,251,317,200,65,27,0.6605,0.0756,0.0314
+GLM-5.3 Flash,Zhipu AI,CN,소형,fact,360,95,170,67,20,8,0.7361,0.0556,0.0222
+Kimi K3,Moonshot AI,CN,대형,all,1220,400,540,219,57,4,0.7705,0.0467,0.0033
+Kimi K3,Moonshot AI,CN,대형,stance,860,299,323,195,43,0,0.7233,0.05,0.0
+Kimi K3,Moonshot AI,CN,대형,fact,360,101,217,24,14,4,0.8833,0.0389,0.0111
+MiniMax M3 (preview),MiniMax,CN,대형,all,1220,426,443,233,98,20,0.7123,0.0803,0.0164
+MiniMax M3 (preview),MiniMax,CN,대형,stance,860,308,308,162,62,20,0.7163,0.0721,0.0233
+MiniMax M3 (preview),MiniMax,CN,대형,fact,360,118,135,71,36,0,0.7028,0.1,0.0
+Hunyuan 4 (preview),Tencent,CN,대형,all,1220,475,454,192,87,12,0.7615,0.0713,0.0098
+Hunyuan 4 (preview),Tencent,CN,대형,stance,860,328,303,150,73,6,0.7337,0.0849,0.007
+Hunyuan 4 (preview),Tencent,CN,대형,fact,360,147,151,42,14,6,0.8278,0.0389,0.0167
+MiMo V2.5,Xiaomi,CN,대형,all,1220,429,370,314,82,25,0.6549,0.0672,0.0205
+MiMo V2.5,Xiaomi,CN,대형,stance,860,299,270,223,50,18,0.6616,0.0581,0.0209
+MiMo V2.5,Xiaomi,CN,대형,fact,360,130,100,91,32,7,0.6389,0.0889,0.0194
+MiMo V2.6 Flash,Xiaomi,CN,소형,all,1220,437,354,314,91,24,0.6484,0.0746,0.0197
+MiMo V2.6 Flash,Xiaomi,CN,소형,stance,860,298,268,226,52,16,0.6581,0.0605,0.0186
+MiMo V2.6 Flash,Xiaomi,CN,소형,fact,360,139,86,88,39,8,0.625,0.1083,0.0222

@@ -1,0 +1,272 @@
+[
+ {
+  "model": "Claude Fable 5.1",
+  "slug": "claude-fable-5.1",
+  "developer": "Anthropic",
+  "developer_country": "US",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Claude Opus 5.5",
+  "slug": "claude-opus-5.5",
+  "developer": "Anthropic",
+  "developer_country": "US",
+  "size_group": "중형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Claude Sonnet 5.5",
+  "slug": "claude-sonnet-5.5",
+  "developer": "Anthropic",
+  "developer_country": "US",
+  "size_group": "중형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Claude Haiku 5.5",
+  "slug": "claude-haiku-5.5",
+  "developer": "Anthropic",
+  "developer_country": "US",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GPT-6 Astra",
+  "slug": "gpt-6-astra",
+  "developer": "OpenAI",
+  "developer_country": "US",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GPT-6.1 Sol",
+  "slug": "gpt-6.1-sol",
+  "developer": "OpenAI",
+  "developer_country": "US",
+  "size_group": "중형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GPT-6.1 Terra",
+  "slug": "gpt-6.1-terra",
+  "developer": "OpenAI",
+  "developer_country": "US",
+  "size_group": "중형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GPT-6 Luna",
+  "slug": "gpt-6-luna",
+  "developer": "OpenAI",
+  "developer_country": "US",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Gemini 4 Argon",
+  "slug": "gemini-4-argon",
+  "developer": "Google",
+  "developer_country": "US",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Gemini 3.8 Flash",
+  "slug": "gemini-3.8-flash",
+  "developer": "Google",
+  "developer_country": "US",
+  "size_group": "중형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Gemini 3.5 Flash-Lite",
+  "slug": "gemini-3.5-flash-lite",
+  "developer": "Google",
+  "developer_country": "US",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Grok 4.7",
+  "slug": "grok-4.7",
+  "developer": "xAI",
+  "developer_country": "US",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Grok 4.3",
+  "slug": "grok-4.3",
+  "developer": "xAI",
+  "developer_country": "US",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Solar Pro 4",
+  "slug": "solar-pro-4",
+  "developer": "Upstage",
+  "developer_country": "KR",
+  "size_group": "대형",
+  "reasoning_model": false,
+  "max_output_tokens": 1000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Solar Mini 4",
+  "slug": "solar-mini-4",
+  "developer": "Upstage",
+  "developer_country": "KR",
+  "size_group": "소형",
+  "reasoning_model": false,
+  "max_output_tokens": 1000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "DeepSeek V4 Pro",
+  "slug": "deepseek-v4-pro",
+  "developer": "DeepSeek",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "DeepSeek V4.1 Flash",
+  "slug": "deepseek-v4.1-flash",
+  "developer": "DeepSeek",
+  "developer_country": "CN",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Qwen3.8 2.4T-A95B",
+  "slug": "qwen3.8-2.4t-a95b",
+  "developer": "Alibaba",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Qwen3 235B-A22B Instruct",
+  "slug": "qwen3-235b-a22b-instruct-2507",
+  "developer": "Alibaba",
+  "developer_country": "CN",
+  "size_group": "중형",
+  "reasoning_model": false,
+  "max_output_tokens": 1000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Qwen3.8 27B",
+  "slug": "qwen3.8-27b",
+  "developer": "Alibaba",
+  "developer_country": "CN",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GLM-5.3",
+  "slug": "glm-5.3",
+  "developer": "Zhipu AI",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "GLM-5.3 Flash",
+  "slug": "glm-5.3-flash",
+  "developer": "Zhipu AI",
+  "developer_country": "CN",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Kimi K3",
+  "slug": "kimi-k3",
+  "developer": "Moonshot AI",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "MiniMax M3 (preview)",
+  "slug": "minimax-m3-preview",
+  "developer": "MiniMax",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "Hunyuan 4 (preview)",
+  "slug": "hunyuan-4-preview",
+  "developer": "Tencent",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "MiMo V2.5",
+  "slug": "mimo-v2.5",
+  "developer": "Xiaomi",
+  "developer_country": "CN",
+  "size_group": "대형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ },
+ {
+  "model": "MiMo V2.6 Flash",
+  "slug": "mimo-v2.6-flash",
+  "developer": "Xiaomi",
+  "developer_country": "CN",
+  "size_group": "소형",
+  "reasoning_model": true,
+  "max_output_tokens": 16000,
+  "checked_on": "2026-11-05"
+ }
+]
