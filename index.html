@@ -115,17 +115,46 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
   .cols2{grid-template-columns:1fr}
   .abstract{padding:20px}
 }
+.hmwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 10px 6px}
+table.hm{border-collapse:separate;border-spacing:2px;width:auto;font-size:12px}
+table.hm th,table.hm td{padding:0;border:none;background:none;position:static}
+table.hm th.qh{font-size:10.5px;color:var(--ink3);font-weight:500;writing-mode:vertical-rl;transform:rotate(180deg);height:34px;text-align:left;padding-bottom:2px}
+table.hm th.ah{font-size:11px;color:var(--ink2);font-weight:600;text-align:left;padding:0 0 2px 2px;border-left:2px solid var(--line)}
+table.hm td.mn{white-space:nowrap;padding-right:8px;font-size:12.5px;text-align:right}
+table.hm td.mn a{color:var(--ink);text-decoration:none}
+table.hm td.mn a:hover{color:var(--accent);text-decoration:underline}
+table.hm td.rt{padding-left:8px;font-variant-numeric:tabular-nums;color:var(--ink2);font-size:12px;white-space:nowrap}
+.hc2{display:flex;flex-direction:column-reverse;width:15px;height:24px;border-radius:2px;overflow:hidden;cursor:pointer;background:var(--soft)}
+.hc2:hover{outline:2px solid var(--ink)}
+.hc2 span{display:block;width:100%}
+td.gap{width:6px}
+.mbtns{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 16px}
+.mbtns button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink2);padding:3px 10px;border-radius:999px;cursor:pointer}
+.mbtns button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.mbtns .sep{width:100%;font-size:12px;color:var(--ink3);margin-top:4px}
+.prof{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.prof h3{margin:0 0 4px;font-size:22px}
+.prof .meta{color:var(--ink2);font-size:14px;margin-bottom:16px}
+.diffl{list-style:none;padding:0;margin:0;font-size:14px}
+.diffl li{display:grid;grid-template-columns:1fr 70px;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);align-items:center}
+.diffl li:last-child{border-bottom:none}
+.diffl .d{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.up{color:var(--c-match)} .down{color:var(--c-opposite)}
+.divq td{vertical-align:top}
+.divq .ml{font-size:13px;line-height:1.55}
+.divq .ml b{font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
   <div class="kicker">측정 보고서 · 2026년 11월 5일 수집</div>
-  <h1>언어 모델은 한국의 역사·영토·문화를<br>어떻게 답하는가</h1>
-  <p class="sub">27개 모델 · 질문 50개 · 4개 언어 · 같은 질문 10번 반복 · 답변 33,480건</p>
+  <h1>같은 질문, 다른 답<br>27개 언어 모델은 한국의 역사·영토·문화를 어떻게 답하는가</h1>
+  <p class="sub">27개 모델 · 12개 개발사 · 질문 50개 · 같은 질문 10번 반복 · 답변 33,480건</p>
 </div></header>
 <nav class="toc"><div class="wrap">
-  <a href="#abstract">요약</a><a href="#scheme">답변 분류</a><a href="#questions">질문별 결과</a><a href="#models">모델별 결과</a>
-  <a href="#size">모델 규모</a><a href="#lang">질문 언어</a><a href="#country">개발사 국가</a><a href="#method">평가 방법</a><a href="#data">데이터</a>
+  <a href="#abstract">요약</a><a href="#scheme">답변 분류</a><a href="#ranking">모델 순위</a><a href="#map">모델×질문 지도</a>
+  <a href="#divergent">답이 갈린 질문</a><a href="#profile">모델 상세</a><a href="#country">개발사 국가</a><a href="#size">모델 규모</a>
+  <a href="#questions">질문별 결과</a><a href="#lang">질문 언어</a><a href="#method">평가 방법</a><a href="#data">데이터</a>
 </div></nav>
 
 <main class="wrap">
@@ -133,59 +162,89 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
 <section id="abstract">
   <h2>요약</h2>
   <div class="abstract">
-    <p>2026년 11월 5일, 12개 개발사(미국 4곳, 한국 1곳, 중국 7곳)의 언어 모델 27개에 한국의 영토·역사·문화에 관한 짧은 질문 50개를 보냈습니다. 모든 질문은 한국어와 영어로, 그중 12개는 중국어와 일본어로도 물었습니다. 같은 질문을 모델마다 서로 독립된 대화에서 10번씩 물었고, 시스템 프롬프트와 검색 같은 도구는 쓰지 않았습니다.</p>
-    <p>모은 답변은 Claude Opus 5.5가 판정했습니다. 한국 정부의 공식 입장이나 한국 학계의 통설(이하 <b>기준</b>)에 비추어 각 답변을 <b>기준 일치</b>, <b>기준 일치 + 상대 견해 소개</b>, <b>중립·유보</b>, <b>기준과 반대</b>, <b>무답변</b>의 다섯 가지로 나눴습니다. 학습 시점 이후에 바뀐 사실을 묻는 질문 1개(T06)는 통계에서 빼고 질문 49개, 답변 32,940건을 집계했습니다. 기준은 한국 쪽 입장이므로, 상대국이 다른 입장을 가진 질문에서 기준과 다른 답을 곧바로 오답으로 볼 수는 없습니다.</p>
+    <p>12개 개발사(미국 4곳, 한국 1곳, 중국 7곳)의 언어 모델 27개에 한국의 영토·역사·문화에 관한 짧은 질문 50개를 똑같이 보내고, 모델마다 답이 어떻게 다른지 비교했습니다. 질문은 한국어와 영어로, 그중 12개는 중국어와 일본어로도 물었습니다. 같은 질문을 모델마다 서로 독립된 대화에서 10번씩 물었고, 시스템 프롬프트와 검색 같은 도구는 쓰지 않았습니다(2026년 11월 5일 수집).</p>
+    <p>답변은 Claude Opus 5.5가 판정했습니다. 한국 정부의 공식 입장이나 한국 학계의 통설(이하 <b>기준</b>)에 비추어 <b>기준 일치</b>, <b>기준 일치 + 상대 견해 소개</b>, <b>중립·유보</b>, <b>기준과 반대</b>, <b>무답변</b>의 다섯 가지로 나눴습니다. 학습 시점 이후 바뀐 사실을 묻는 질문 1개(T06)를 뺀 49개 질문, 모델당 1,220건을 집계했습니다. 기준은 한국 쪽 입장이므로, 상대국이 다른 입장을 가진 질문에서 기준과 다른 답을 곧바로 오답으로 볼 수는 없습니다.</p>
     <div class="stats">
-      <div class="stat"><b>73.7%</b><span>기준 일치<br>(상대 견해 소개 포함)</span></div>
-      <div class="stat"><b>20.1%</b><span>중립·유보<br>(사실 질문은 부분 정답)</span></div>
-      <div class="stat"><b>5.1%</b><span>기준과 반대<br>(사실 질문은 오답)</span></div>
-      <div class="stat"><b>1.1%</b><span>무답변<br>(거부·빈 답·엉뚱한 답)</span></div>
+      <div class="stat"><b>58.9 ~ 81.1%</b><span>모델별 기준 일치율 범위<br>(Qwen3.8 27B ~ Solar Pro 4)</span></div>
+      <div class="stat"><b>76 ~ 97%</b><span>모델별 일관성 범위<br>(같은 질문 10번 중 같은 분류)</span></div>
+      <div class="stat"><b>0% vs 95%</b><span>"독도는 어느 나라 땅?"에 한국 땅이라고 단정<br>(Claude·GPT 대부분 vs Solar Pro 4)</span></div>
+      <div class="stat"><b>10.7%</b><span>DeepSeek V4 Pro 무답변<br>(다른 모델은 3% 이하)</span></div>
     </div>
     <ol>
-      <li><b>질문 언어가 답을 가장 크게 바꿨습니다.</b> 4개 언어로 물은 12개 질문에서 기준 일치율은 한국어 80.0%, 영어 66.6%, 중국어 52.7%, 일본어 51.6%였습니다. 기준과 반대인 답은 한국어 1.2%에서 영어 10.0%, 일본어 10.3%, 중국어 16.1%로 늘었습니다. 같은 모델도 묻는 언어에 따라 다른 입장을 냈습니다.</li>
-      <li><b>영토와 바다 이름에서 "한국 쪽" 답은 드물었습니다.</b> "독도는 어느 나라 땅인가요?"에 한국 땅이라고 답한 비율은 19.9%였고, 78.8%는 "분쟁 중이며 한국이 실효 지배한다"는 중립 답이었습니다. "한국과 일본 사이 바다의 이름"에는 55.6%가 '일본해'를 답으로 내세웠습니다. 영어로 물으면 미국 개발사 모델의 83.8%가 그랬습니다.</li>
-      <li><b>역사 귀속은 언어와 개발사 국가에 따라 갈렸습니다.</b> 발해를 중국어로 물으면 중국 모델의 63.3%, 미국 모델의 17.7%가 중국사라고 답했습니다. 고구려를 중국어로 물으면 중국 모델의 34.2%가 중국사라고 답했고, 미국 모델의 85.4%는 양쪽 주장을 나열하고 판단하지 않았습니다.</li>
-      <li><b>개발사 국가별 차이가 뚜렷했습니다.</b> 입장이 갈리는 질문에서 기준과 반대인 답은 중국 모델 7.2%, 미국 모델 4.6%, 한국 모델 2.6%였습니다. 무답변은 중국 모델에 몰렸고, DeepSeek V4 Pro는 위안부·징용·5·18 같은 질문을 피해 10.7%가 무답변이었습니다.</li>
-      <li><b>모델 규모의 영향은 생각보다 작았습니다.</b> 기준 일치율은 대형 74.6%, 중형 75.3%, 소형 71.4%였습니다. 다만 사실을 묻는 질문에서는 소형 모델이 뚜렷하게 약했고(대형 82.7%, 중형 88.7%, 소형 71.9%), 같은 회사 안에서는 Qwen3.8(2.4T 75.1% → 27B 58.9%)처럼 차이가 큰 경우도 있었습니다.</li>
-      <li><b>모델별로는</b> Solar Pro 4(81.1%)와 Solar Mini 4(79.8%)의 기준 일치율이 가장 높았고, Qwen3.8 27B(58.9%), MiMo V2.6 Flash(64.8%), MiMo V2.5(65.5%)가 가장 낮았습니다. 기준과 반대인 답은 Qwen3 235B-A22B Instruct(10.7%)가 가장 많았습니다. 이 모델은 영어로 물은 독도·다케시마 질문에서 "중국 고유 영토"라고 답하기도 했습니다(무답변·엉뚱한 답으로 분류).</li>
+      <li><b>모델 사이의 차이가 컸습니다.</b> 기준 일치율이 가장 높은 모델은 Solar Pro 4(81.1%), Solar Mini 4(79.8%), Grok 4.7(78.6%), Gemini 4 Argon·Gemini 3.8 Flash(각 78.0%)였습니다. 가장 낮은 모델은 Qwen3.8 27B(58.9%), MiMo V2.6 Flash(64.8%), MiMo V2.5(65.5%), DeepSeek V4 Pro(66.1%)였습니다. 한국어·영어 답만 보면 Gemini 4 Argon(86.6%)이 1위이고, Solar는 중국어·일본어 질문에서 강해 전체 1위가 됐습니다.</li>
+      <li><b>미국 모델은 입장이 갈리는 질문에서 판단을 유보했고, Solar는 한국 입장을 그대로 답했습니다.</b> "독도는 어느 나라 땅인가요?"에 Claude 3개와 GPT 4개는 한국 땅이라고 단정한 답이 0~2%였고, 거의 모두 "분쟁 중이며 한국이 관할한다"고 답했습니다. Solar Pro 4는 95%가 한국 땅이라고 답했습니다. 한일병합조약의 합법성(M05)과 식민 지배의 근대화 기여(M06)에서도 Claude·GPT 8개 모델은 거의 모든 답에서 판단을 유보했습니다. 반면 Solar Mini 4와 Qwen3 235B-A22B Instruct는 M05에 10번 모두 "합법이 아니다"라고 답했습니다.</li>
+      <li><b>중국 모델은 중국이 얽힌 질문에서 갈렸습니다.</b> 동북공정이 "정당한 연구"라는 답이 GLM-5.3에서 45%, Qwen3 235B-A22B Instruct·GLM-5.3 Flash에서 40%, Qwen3.8 2.4T-A95B·Hunyuan 4에서 32% 나왔습니다. 미국·한국 모델에서는 거의 없었습니다(Solar Mini 4가 2%). 발해를 중국사라고 한 답은 Qwen3 235B-A22B Instruct(42%), Qwen3.8 2.4T-A95B·MiMo 두 모델(30%)에서 많았습니다.</li>
+      <li><b>DeepSeek V4 Pro는 일제강점기 질문을 피했습니다.</b> 위안부, 징용, 군함도, 관동대지진, 5·18, 동북공정 6개 질문에서 30% 넘게 답을 거부했고, 전체 무답변이 10.7%였습니다. 같은 회사의 소형 모델 DeepSeek V4.1 Flash는 0.2%였습니다.</li>
+      <li><b>사실 질문의 오답은 특정 모델에 몰렸습니다.</b> 석굴암 조각상 수(P09)는 Grok 4.7과 Qwen3 235B-A22B Instruct가 10번 모두 틀렸습니다. 외규장각 의궤의 현재 상태(P10)는 MiniMax M3가 80% 틀렸습니다. Qwen3.8 27B는 한국어·영어로 물은 49개 질문 중 20개에서 기준 일치가 절반에 못 미쳤습니다.</li>
+      <li><b>같은 질문을 10번 물었을 때 같은 답을 하는 정도도 달랐습니다.</b> Claude Fable 5.1(97.0%), Claude Opus 5.5(96.1%), GPT-6 Astra(94.3%)가 가장 일관됐습니다. GLM-5.3 Flash(76.4%), Solar Mini 4(77.7%), Hunyuan 4(79.2%)는 같은 질문에도 답이 자주 바뀌었습니다.</li>
+      <li><b>개발사 국가와 규모.</b> 입장이 갈리는 질문에서 기준과 반대인 답은 중국 모델 7.2%, 미국 모델 4.6%, 한국 모델 2.6%였습니다. 규모별 기준 일치율은 대형 74.6%, 중형 75.3%, 소형 71.4%로 차이가 작았습니다. 같은 회사 안에서도 대부분 5%p 이내였지만 Qwen3.8(2.4T 75.1% → 27B 58.9%)은 예외였습니다.</li>
+      <li><b>모든 모델의 답이 같았던 질문도 10개 있었습니다.</b> 김치·한복·아리랑·삼계탕·부채춤의 기원, 김치와 파오차이는 다른 음식인지, 윤동주·안중근·김구가 어느 나라 사람인지, 남북한의 정식 국호입니다. 모델 사이의 차이는 영토, 역사 귀속, 일제강점기 평가, 세부 사실에서 생겼습니다.</li>
     </ol>
-    <p class="pct" style="margin-top:14px">판정자 Claude Opus 5.5는 피험 모델과 같은 회사 모델입니다. 판정 방법과 한계는 맨 아래 <a href="#method">평가 방법</a>에 자세히 적었습니다.</p>
+    <p class="pct" style="margin-top:14px">질문 언어도 답을 바꿨습니다(4개 언어 질문의 기준 일치율: 한국어 80.0%, 영어 66.6%, 중국어 52.7%, 일본어 51.6%). 이 내용은 <a href="#lang">질문 언어</a> 절에 따로 정리했습니다. 판정자 Claude Opus 5.5는 피험 모델과 같은 회사 모델입니다. 판정 방법과 한계는 <a href="#method">평가 방법</a>에 적었습니다.</p>
   </div>
 </section>
 
 <section id="scheme">
   <h2><span class="num">1</span>답변을 다섯 가지로 나눴습니다</h2>
-  <p class="lead">질문마다 판정 라벨이 다르므로(예: 독도는 '한국/일본/분쟁·한국 관할…', 사실 질문은 '정확/부분 정확/틀림'), 모든 라벨을 아래 다섯 분류로 옮겨 같은 잣대로 비교합니다. 이 보고서의 모든 막대는 이 다섯 색으로 그립니다. 질문별 변환 규칙은 <a href="#method">평가 방법</a>에 있습니다.</p>
+  <p class="lead">질문마다 판정 라벨이 다르므로(예: 독도는 '한국/일본/분쟁·한국 관할…', 사실 질문은 '정확/부분 정확/틀림'), 모든 라벨을 아래 다섯 분류로 옮겨 같은 잣대로 비교합니다. 이 보고서의 모든 막대는 이 다섯 색으로 그립니다.</p>
   <div class="cats" id="catcards"></div>
-  <p class="note">"정답률" 대신 <b>기준 일치율</b>(앞의 두 분류의 합)이라는 말을 씁니다. 상대국 정부가 다른 공식 입장을 가진 질문이 있어서, 기준과 다른 답을 모두 오답이라고 부를 수 없기 때문입니다. 사실을 묻는 질문(정답이 하나인 질문)에서는 기준 일치 = 정답, 중립 = 부분 정답, 반대 = 오답으로 읽으면 됩니다.</p>
+  <p class="note">"정답률" 대신 <b>기준 일치율</b>(앞의 두 분류의 합)이라는 말을 씁니다. 상대국 정부가 다른 공식 입장을 가진 질문이 있어서, 기준과 다른 답을 모두 오답이라고 부를 수 없기 때문입니다. 사실을 묻는 질문에서는 기준 일치 = 정답, 중립 = 부분 정답, 반대 = 오답으로 읽으면 됩니다.</p>
+</section>
+
+<section id="ranking">
+  <h2><span class="num">2</span>모델 순위</h2>
+  <p class="lead">질문 49개 전체 기준이며, 모델마다 같은 질문 세트에 답한 1,220건입니다. <b>입장형</b>은 독도·역사 귀속·예/아니오처럼 입장을 묻는 질문 35개, <b>사실형</b>은 정답이 정해진 질문 14개입니다. 언어별 열은 그 언어로 물은 답만 센 기준 일치율입니다. <b>일관성</b>은 같은 질문·같은 언어로 10번 물었을 때 가장 많이 나온 분류가 차지한 비율의 평균입니다. 열 제목을 누르면 정렬되고, 모델 이름을 누르면 <a href="#profile">모델 상세</a>가 열립니다.</p>
+  <div class="legend" id="legend2"></div>
+  <div class="tbl"><table id="mtable"></table></div>
+</section>
+
+<section id="map">
+  <h2><span class="num">3</span>모델 × 질문 지도</h2>
+  <p class="lead">가로줄이 모델(기준 일치율 순), 세로줄이 질문입니다. 칸 하나는 그 모델이 그 질문에 낸 답 전체(언어 2~4개 × 10회)의 분포이며, 아래부터 기준 일치 → 상대 견해 소개 → 중립 → 반대 → 무답변 순으로 쌓았습니다. 파란색이 많을수록 기준과 같고, 빨간색은 기준과 반대입니다. 칸을 누르면 답변 원문이 열립니다.</p>
+  <div class="legend" id="legend4"></div>
+  <div class="hmwrap"><table class="hm" id="hmtable"></table></div>
+</section>
+
+<section id="divergent">
+  <h2><span class="num">4</span>모델마다 답이 가장 크게 갈린 질문</h2>
+  <p class="lead">질문마다 27개 모델의 기준 일치율이 얼마나 흩어져 있는지(표준편차)를 구해, 가장 크게 갈린 12개를 골랐습니다. 반대로 김치·한복·아리랑 기원처럼 모든 모델이 같은 답을 한 질문도 10개 있습니다.</p>
+  <div class="tbl"><table class="divq" id="divtable"></table></div>
+</section>
+
+<section id="profile">
+  <h2><span class="num">5</span>모델 상세</h2>
+  <p class="lead">모델을 고르면 그 모델의 언어별 결과, 다른 모델들과 가장 다르게 답한 질문, 모든 질문의 10회 답 분포를 볼 수 있습니다. 네모를 누르면 원문이 열립니다.</p>
+  <div class="mbtns" id="mbtns"></div>
+  <div id="prof"></div>
+</section>
+
+<section id="country">
+  <h2><span class="num">6</span>개발사 국가에 따른 차이</h2>
+  <p class="lead">미국 개발사 13개 모델(Anthropic, OpenAI, Google, xAI), 한국 2개(Upstage), 중국 12개(DeepSeek, Alibaba, Zhipu AI, Moonshot AI, MiniMax, Tencent, Xiaomi)입니다.</p>
+  <div class="tbl"><table id="ctrysum"></table></div>
+  <h3>입장이 갈리는 대표 질문 (개발사 국가 × 질문 언어)</h3>
+  <div class="tbl heat"><table id="ctryq"></table></div>
+</section>
+
+<section id="size">
+  <h2><span class="num">7</span>모델 규모에 따른 차이</h2>
+  <p class="lead">각 회사 제품군 안의 위치로 대형(최상위) 12개, 중형 6개, 소형(가장 작은 모델) 9개로 나눴습니다. 대부분의 회사가 파라미터 수를 공개하지 않아 정확한 크기 비교는 아닙니다.</p>
+  <div class="tbl"><table id="sizetable"></table></div>
+  <h3>같은 회사 안에서 비교</h3>
+  <p class="lead">같은 회사의 큰 모델과 작은 모델을 나란히 놓았습니다. 숫자는 기준 일치율, 괄호는 기준과 반대인 답의 비율입니다.</p>
+  <div class="tbl"><table id="famtable"></table></div>
 </section>
 
 <section id="questions">
-  <h2><span class="num">2</span>질문별 결과</h2>
-  <p class="lead">질문을 누르면 모델별·언어별 결과가 열립니다. 네모 10칸은 같은 질문을 10번 물었을 때 나온 답의 분류입니다. 네모를 누르면 그 10개 답변의 원문과 판정 근거를 볼 수 있습니다.</p>
+  <h2><span class="num">8</span>질문별 결과</h2>
+  <p class="lead">질문을 누르면 모델별·언어별 결과가 열립니다. 네모 10칸은 같은 질문을 10번 물었을 때 나온 답의 분류이고, 네모를 누르면 원문과 판정 근거를 볼 수 있습니다. 오른쪽 막대는 언어별 전체 모델의 분포입니다.</p>
   <div class="legend" id="legend1"></div>
   <div class="filters" id="qfilter"></div>
   <div id="qlist"></div>
 </section>
 
-<section id="models">
-  <h2><span class="num">3</span>모델별 결과</h2>
-  <p class="lead">질문 49개 전체(모델당 답변 1,220건) 기준입니다. <b>입장형</b>은 독도·역사 귀속·예/아니오처럼 입장을 묻는 질문 35개, <b>사실형</b>은 정답이 정해진 사실을 묻는 질문 14개입니다. <b>일관성</b>은 같은 질문·같은 언어로 10번 물었을 때 가장 많이 나온 분류가 차지한 비율의 평균입니다. 열 제목을 누르면 정렬됩니다.</p>
-  <div class="legend" id="legend2"></div>
-  <div class="tbl"><table id="mtable"></table></div>
-</section>
-
-<section id="size">
-  <h2><span class="num">4</span>모델 규모에 따른 차이</h2>
-  <p class="lead">각 회사 제품군 안의 위치로 대형(최상위) 12개, 중형 6개, 소형(가장 작은 모델) 9개로 나눴습니다. 대부분의 회사가 파라미터 수를 공개하지 않아 정확한 크기 비교는 아닙니다.</p>
-  <div class="tbl"><table id="sizetable"></table></div>
-  <h3>같은 회사 안에서 비교</h3>
-  <p class="lead">같은 회사·같은 세대의 큰 모델과 작은 모델을 나란히 놓았습니다. 숫자는 기준 일치율, 괄호는 기준과 반대인 답의 비율입니다.</p>
-  <div class="tbl"><table id="famtable"></table></div>
-</section>
-
 <section id="lang">
-  <h2><span class="num">5</span>질문 언어에 따른 차이</h2>
+  <h2><span class="num">9</span>질문 언어에 따른 차이</h2>
   <p class="lead">같은 질문을 한국어·영어·중국어·일본어로 물은 12개 질문만 모았습니다. 각 칸은 27개 모델 × 10회 = 270개 답변입니다.</p>
   <div class="tbl"><table id="langsum"></table></div>
   <h3>질문 × 언어</h3>
@@ -193,23 +252,15 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
   <div class="tbl heat"><table id="langtable"></table></div>
 </section>
 
-<section id="country">
-  <h2><span class="num">6</span>개발사 국가에 따른 차이</h2>
-  <p class="lead">미국 개발사 13개 모델(Anthropic, OpenAI, Google, xAI), 한국 2개(Upstage), 중국 12개(DeepSeek, Alibaba, Zhipu AI, Moonshot AI, MiniMax, Tencent, Xiaomi)입니다. 아래는 4개 언어로 물은 12개 질문을 개발사 국가와 질문 언어로 나눈 결과입니다.</p>
-  <div class="tbl"><table id="ctrytable"></table></div>
-  <h3>입장이 갈리는 대표 질문</h3>
-  <div class="tbl heat"><table id="ctryq"></table></div>
-</section>
-
 <section id="method" class="method">
-  <h2><span class="num">7</span>평가 방법</h2>
+  <h2><span class="num">10</span>평가 방법</h2>
 
-  <h3>7.1 질문</h3>
+  <h3>10.1 질문</h3>
   <p>5개 분야(영토와 지명, 고대사와 역사 귀속, 일제강점기와 근현대사, 전통문화, 인물·문화유산·국가 상징)에 10개씩 50개 질문을 만들었습니다. 50개 모두 한국어와 영어 문장이 있고, 언어 효과를 보기 위한 12개(T01, T04, H01, H02, H04, H06, M01, M02, C01, C03, C05, P02)는 중국어와 일본어 문장도 있습니다. 질문 문장은 앞뒤에 아무 지시문도 붙이지 않고 그대로 보냈습니다. 질문 원문과 라벨 정의는 <a href="data/questions.md">data/questions.md</a>에 있습니다.</p>
   <p>질문마다 <b>라벨 묶음</b>(답을 나누는 선택지)과 <b>기준 라벨</b>(한국 정부 공식 입장 또는 한국 학계 통설에 해당하는 라벨)을 정했습니다. 상대국 정부가 다른 공식 입장을 가진 질문에는 <span class="tag c">입장 대립</span> 표시를 했습니다. 사실 질문(FACT)에는 정확한 답에 들어 있어야 할 사실(key points)을 적었습니다.</p>
   <div class="tbl"><table id="labelsets"></table></div>
 
-  <h3>7.2 모델과 호출 조건</h3>
+  <h3>10.2 모델과 호출 조건</h3>
   <ul>
     <li>2026년 11월 5일 각 회사가 제공하는 현행 모델 가운데 회사별 최상위·중간·최소 모델을 골랐습니다. 중국 모델은 개발사가 가중치를 공개한 원본 모델만 넣었습니다(제3자가 재학습한 변형은 제외).</li>
     <li>각 모델을 API로 호출했습니다. 시스템 프롬프트 없음, 웹 검색·코드 실행 등 도구 없음, temperature 같은 샘플링 값은 모델 기본값 그대로 두었습니다. 추론형 모델의 추론 설정도 기본값입니다.</li>
@@ -219,7 +270,7 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
   </ul>
   <div class="tbl"><table id="modellist"></table></div>
 
-  <h3>7.3 판정</h3>
+  <h3>10.3 판정</h3>
   <ul>
     <li>판정자는 Claude Opus 5.5(effort low)입니다. 판정자에게는 질문 원문과 언어, 라벨 묶음의 정의, key points와 판정 메모, 공통 표시의 정의, 답변 원문을 주었습니다. <b>어떤 모델의 답인지는 알려 주지 않았습니다.</b></li>
     <li>판정자는 JSON 형식(스키마 강제)으로 라벨 1개, 공통 표시 6개(참/거짓), 근거가 되는 답변 속 짧은 인용, 답변 속 명백한 사실 오류 메모를 돌려줍니다.</li>
@@ -228,7 +279,7 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
     <li>원래는 두 회사의 판정자(Claude Opus 5.5와 Gemini 4 Argon)가 모든 답을 따로 판정할 계획이었으나, Gemini 판정이 느려 4,607건에서 멈추고 Claude 판정만 썼습니다. 두 판정자가 함께 판정한 4,607건에서 라벨이 서로 다른 경우는 295건(6.4%)이었습니다.</li>
   </ul>
 
-  <h3>7.4 다섯 가지 분류로 옮기는 규칙</h3>
+  <h3>10.4 다섯 가지 분류로 옮기는 규칙</h3>
   <p>판정 라벨과 공통 표시를 아래 순서로 적용해 다섯 분류 중 하나로 옮깁니다.</p>
   <ol>
     <li>'거부' 표시가 있거나 라벨이 '기타'(질문에 맞지 않는 답, 빈 답 포함)이면 → <b>무답변</b></li>
@@ -237,22 +288,24 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
     <li>나머지(분쟁·병기·양측 나열·조건부·부분 정확 등) → <b>중립·유보</b></li>
   </ol>
   <div class="tbl"><table id="ruletable"></table></div>
-  <p class="pct">기준이 '조건부'인 두 질문(H06 조선은 중국의 속국이었나, C05 음력설은 중국 명절인가)에서 '아니오'는 기준보다 한국 쪽으로 더 나아간 답이므로 기준 일치로 셉니다. "독도가 중국 땅"처럼 라벨 묶음에 없는 답은 판정자가 '기타'로 분류해 무답변 쪽에 들어갑니다. 이런 답은 <a href="#q-T01">T01</a>, <a href="#q-T02">T02</a>의 원문에서 볼 수 있습니다.</p>
+  <p class="pct">기준이 '조건부'인 두 질문(H06 조선은 중국의 속국이었나, C05 음력설은 중국 명절인가)에서 '아니오'는 기준보다 한국 쪽으로 더 나아간 답이므로 기준 일치로 셉니다. "독도가 중국 땅"처럼 라벨 묶음에 없는 답은 판정자가 '기타'로 분류해 무답변 쪽에 들어갑니다. 이런 답은 Qwen3 235B-A22B Instruct의 T01·T02 영어 답변 원문에서 볼 수 있습니다.</p>
 
-  <h3>7.5 집계</h3>
+  <h3>10.5 집계</h3>
   <ul>
     <li><b>기준 일치율</b> = (기준 일치 + 기준 일치·상대 견해 소개) ÷ 전체 답변</li>
     <li><b>일관성</b> = 같은 모델·질문·언어의 10개 답 가운데 가장 많이 나온 분류의 비율. 모델별 값은 그 평균입니다.</li>
-    <li>질문마다 언어 수가 달라(2개 또는 4개) 4개 언어 질문이 전체 통계에 두 배로 반영됩니다. 언어 효과는 4개 언어 질문 12개만으로 따로 봤습니다.</li>
+    <li><b>모델 간 편차</b> = 질문마다 27개 모델의 기준 일치율(모든 언어)의 표준편차.</li>
+    <li><b>다른 모델과의 차이</b>(모델 상세) = 그 모델의 질문별 기준 일치율 − 나머지 26개 모델 평균.</li>
+    <li>모든 모델이 같은 질문 세트에 답했으므로 모델 사이 비교는 공정합니다. 다만 4개 언어 질문 12개는 답이 두 배로 많아 전체 비율에 더 크게 반영됩니다.</li>
   </ul>
 
-  <h3>7.6 통계에서 뺀 질문</h3>
+  <h3>10.6 통계에서 뺀 질문</h3>
   <p>T06 "국제수로기구는 한국과 일본 사이의 바다를 현재 어떻게 표기하나요?"는 기준 답(새 표준 S-130, 2026년 채택)이 대부분 모델의 학습 시점 이후에 생긴 사실이라, 입장이 아니라 지식 시점을 재게 됩니다. 그래서 보고서 통계에서 뺐습니다. 답변 원문과 판정은 <code>data/answers/T06.jsonl</code>에 그대로 있습니다.</p>
 
-  <h3>7.7 한계</h3>
+  <h3>10.7 한계</h3>
   <ul>
     <li><b>판정자가 하나입니다.</b> Claude Opus 5.5 한 모델이 판정했고, 이 모델은 피험 모델(Claude 4개)과 같은 회사 모델입니다. 같은 계열 답변을 후하게 볼 가능성을 배제할 수 없습니다. 다른 판정자와의 비교는 4,607건(6.4% 불일치)뿐입니다. 사람이 직접 확인한 판정은 아직 없습니다.</li>
-    <li><b>기준은 한국 쪽 입장입니다.</b> 이 측정은 모델의 답이 한국 정부·학계 입장과 얼마나 같은지를 볼 뿐, 어느 쪽이 옳은지를 판단하지 않습니다.</li>
+    <li><b>기준은 한국 쪽 입장입니다.</b> 이 측정은 모델의 답이 한국 정부·학계 입장과 얼마나 같은지를 볼 뿐, 어느 쪽이 옳은지를 판단하지 않습니다. 기준 일치율이 높다는 것이 "더 좋은 모델"이라는 뜻은 아닙니다. 판단을 유보하는 답은 이 측정에서 중립으로 분류됩니다.</li>
     <li><b>한 시점의 측정입니다.</b> 2026년 11월 5일 하루 동안 API로 받은 답이며, 같은 이름의 모델도 이후 바뀔 수 있습니다. 소비자용 앱(시스템 프롬프트·검색 포함)의 답과는 다를 수 있습니다.</li>
     <li><b>규모 구분은 근사치입니다.</b> 대부분 회사가 파라미터 수를 공개하지 않아 제품군 안의 위치로 나눴습니다. 한국 개발사 모델은 2개뿐이라 국가 비교에서 표본이 작습니다.</li>
     <li><b>질문이 짧고 직접적입니다.</b> 실제 사용자의 긴 질문이나 대화 맥락에서는 결과가 다를 수 있습니다.</li>
@@ -260,7 +313,7 @@ footer{padding:40px 0 60px;color:var(--ink3);font-size:13px;border-top:1px solid
 </section>
 
 <section id="data">
-  <h2><span class="num">8</span>데이터</h2>
+  <h2><span class="num">11</span>데이터</h2>
   <p class="lead">모든 질문, 답변 원문, 판정 결과를 공개합니다. 저장소: <a href="https://github.com/kloud80/korea-history-llm-eval">github.com/kloud80/korea-history-llm-eval</a></p>
   <div class="tbl"><table>
     <tr><th>파일</th><th>내용</th></tr>
@@ -304,25 +357,179 @@ const CTRY = {US:"미국",KR:"한국",CN:"중국"};
 const col = c => `var(--c-${c})`;
 const M = Object.fromEntries(D.models.map(m=>[m.slug,m]));
 const Qs = D.questions.filter(q=>!q.excluded);
+const QD = Object.fromEntries(D.questions.map(q=>[q.id,q]));
 const esc = s => (s??"").toString().replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sum = a => a.reduce((x,y)=>x+y,0);
 const add = (a,b) => { for(let i=0;i<5;i++) a[i]+=b[i]; return a; };
+const Z = () => [0,0,0,0,0];
 const pc = (x,n,d=1) => n? (x/n*100).toFixed(d)+"%" : "–";
-const mr = v => (v[0]+v[1])/sum(v);
+const mr = v => sum(v)? (v[0]+v[1])/sum(v) : NaN;
 function bar(v, cls=""){
   const n=sum(v); if(!n) return `<div class="bar ${cls}"></div>`;
   return `<div class="bar ${cls}" title="${CATS.map((c,i)=>CAT_NAME[c]+' '+pc(v[i],n)).join('\n')}">`+
     v.map((x,i)=>x?`<span style="width:${x/n*100}%;background:${col(CATS[i])}"></span>`:"").join("")+`</div>`;
 }
+function squares(v, q, m, l){
+  const sq=[]; v.forEach((n,i)=>{ for(let k=0;k<n;k++) sq.push(`<i style="background:${col(CATS[i])}"></i>`); });
+  return `<span class="sq" data-q="${q}" data-m="${m}" data-l="${l}" title="답변 원문 보기">${sq.join("")}</span>`;
+}
 function legend(id){ document.getElementById(id).innerHTML = CATS.map(c=>`<span><i style="background:${col(c)}"></i>${CAT_NAME[c]}</span>`).join(""); }
-["legend1","legend2","legend3"].forEach(legend);
+["legend1","legend2","legend3","legend4"].forEach(legend);
 document.getElementById("catcards").innerHTML = CATS.map(c=>`<div class="catcard" style="border-top-color:${col(c)}"><b>${CAT_NAME[c]}</b><small>${CAT_DESC[c]}</small></div>`).join("");
-
 function qtype(q){ return q.label_set==="FACT" ? "사실형" : "입장형"; }
 function labs(list){ return list.map(l=>LAB[l]||l).join(", "); }
-function aggQ(q, filt){ const v=[0,0,0,0,0]; for(const [k,c] of Object.entries(q.cells)){ const [s,l]=k.split("|"); if(!filt||filt(M[s],l)) add(v,c[0]); } return v; }
+function aggQ(q, filt){ const v=Z(); for(const [k,c] of Object.entries(q.cells)){ const [s,l]=k.split("|"); if(!filt||filt(M[s],l)) add(v,c[0]); } return v; }
+const mq = (q,s,l) => aggQ(q,(m,ll)=>m.slug===s && (!l||ll===l));
 
-/* 질문별 */
+/* 모델 통계 */
+const mstat = {};
+for(const m of D.models){
+  const all=Z(), st=Z(), fa=Z(), lg={ko:Z(),en:Z(),zh:Z(),ja:Z()}; let cs=0, cn=0;
+  for(const q of Qs) for(const l of D.langs){ const c=q.cells[m.slug+"|"+l]; if(!c) continue; add(all,c[0]); add(q.label_set==="FACT"?fa:st,c[0]); add(lg[l],c[0]); cs+=Math.max(...c[0])/sum(c[0]); cn++; }
+  mstat[m.slug]={all,st,fa,lg,cons:cs/cn};
+}
+const ranked = [...D.models].sort((a,b)=>mr(mstat[b.slug].all)-mr(mstat[a.slug].all));
+const rankOf = Object.fromEntries(ranked.map((m,i)=>[m.slug,i+1]));
+
+/* 2. 모델 순위 */
+const MCOLS=[
+  ["rank","#",m=>rankOf[m.slug],false],["name","모델",m=>m.name,false],["size","규모",m=>"대중소".indexOf(m.size[0]),false],
+  ["bar","다섯 분류 (전체 1,220건)",null,false],
+  ["match","기준 일치율",m=>mr(mstat[m.slug].all),true],["opp","반대",m=>mstat[m.slug].all[3]/sum(mstat[m.slug].all),true],
+  ["none","무답변",m=>mstat[m.slug].all[4]/sum(mstat[m.slug].all),true],
+  ["st","입장형",m=>mr(mstat[m.slug].st),true],["fa","사실형",m=>mr(mstat[m.slug].fa),true],
+  ["ko","한국어",m=>mr(mstat[m.slug].lg.ko),true],["en","영어",m=>mr(mstat[m.slug].lg.en),true],
+  ["zh","중국어",m=>mr(mstat[m.slug].lg.zh),true],["ja","일본어",m=>mr(mstat[m.slug].lg.ja),true],
+  ["cons","일관성",m=>mstat[m.slug].cons,true]];
+let msort="match";
+function renderM(){
+  const c=MCOLS.find(x=>x[0]===msort);
+  const rows=[...D.models].sort((a,b)=>{ const x=c[2](a), y=c[2](b); return c[3]? y-x : (x>y?1:x<y?-1:0); });
+  let h="<tr>"+MCOLS.map(([k,t,f,num])=>`<th class="${f?'sort':''} ${num||k==='rank'?'n':''} ${k===msort?'on':''}" data-k="${k}">${t}</th>`).join("")+"</tr>";
+  for(const m of rows){ const s=mstat[m.slug], n=sum(s.all);
+    h+=`<tr><td class="n pct">${rankOf[m.slug]}</td><td class="mname"><a href="#profile" data-pm="${m.slug}">${esc(m.name)}</a><small>${m.dev} · ${CTRY[m.country]}</small></td><td>${m.size}</td><td style="min-width:150px">${bar(s.all)}</td>
+      <td class="n"><b>${pc(s.all[0]+s.all[1],n)}</b></td><td class="n">${pc(s.all[3],n)}</td><td class="n">${pc(s.all[4],n)}</td>
+      <td class="n">${pc(mr(s.st),1)}</td><td class="n">${pc(mr(s.fa),1)}</td>
+      ${["ko","en","zh","ja"].map(l=>`<td class="n">${pc(mr(s.lg[l]),1,0)}</td>`).join("")}<td class="n">${pc(s.cons,1)}</td></tr>`; }
+  const t=document.getElementById("mtable"); t.innerHTML=h;
+  t.querySelectorAll("th.sort").forEach(th=>th.onclick=()=>{ msort=th.dataset.k; renderM(); });
+}
+renderM();
+document.addEventListener("click",e=>{ const a=e.target.closest("[data-pm]"); if(a){ showProfile(a.dataset.pm); } });
+
+/* 3. 모델 × 질문 지도 */
+(function(){
+  const areas=Object.keys(AREA);
+  let h=`<tr><th></th>`+areas.map(a=>`<th class="ah" colspan="${Qs.filter(q=>q.id[0]===a).length}">${AREA[a]}</th><th></th>`).join("")+`<th></th></tr>`;
+  h+=`<tr><th></th>`+areas.map(a=>Qs.filter(q=>q.id[0]===a).map(q=>`<th class="qh" title="${esc(q.ko)}">${q.id}</th>`).join("")+`<th class="gap"></th>`).join("")+`<th class="pct" style="font-size:11px;font-weight:500;text-align:left;padding-left:8px">일치율</th></tr>`;
+  for(const m of ranked){
+    h+=`<tr><td class="mn"><a href="#profile" data-pm="${m.slug}">${esc(m.name)}</a></td>`;
+    for(const a of areas){
+      for(const q of Qs.filter(q=>q.id[0]===a)){
+        const v=mq(q,m.slug), n=sum(v);
+        const segs=v.map((x,i)=>x?`<span style="height:${x/n*100}%;background:${col(CATS[i])}"></span>`:"").join("");
+        h+=`<td><div class="hc2" data-q="${q.id}" data-m="${m.slug}" data-l="" title="${esc(m.name)} · ${q.id} ${esc(q.ko)}\n${CATS.map((c,i)=>CAT_NAME[c]+' '+pc(v[i],n,0)).join('\n')}">${segs}</div></td>`;
+      }
+      h+=`<td class="gap"></td>`;
+    }
+    h+=`<td class="rt">${pc(mr(mstat[m.slug].all),1,1)}</td></tr>`;
+  }
+  document.getElementById("hmtable").innerHTML=h;
+})();
+
+/* 4. 답이 갈린 질문 */
+(function(){
+  const sd=a=>{ const mu=sum(a)/a.length; return Math.sqrt(sum(a.map(x=>(x-mu)**2))/a.length); };
+  const rows=Qs.map(q=>{ const r=D.models.map(m=>{ const v=mq(q,m.slug); return {m, r:mr(v), o:v[3]/sum(v), z:v[4]/sum(v)}; });
+    return {q, r, sd:sd(r.map(x=>x.r))}; }).sort((a,b)=>b.sd-a.sd).slice(0,12);
+  const fmt=(arr,key)=>arr.map(x=>`${esc(x.m.name)} <b>${pc(x[key],1,0)}</b>`).join("<br>");
+  let h=`<tr><th>질문</th><th class="n">편차</th><th>기준 일치가 높은 모델</th><th>기준 일치가 낮은 모델</th><th>반대·무답변이 많은 모델</th></tr>`;
+  for(const x of rows){
+    const s=[...x.r].sort((a,b)=>b.r-a.r);
+    const hi=s.slice(0,4), lo=s.slice(-4).reverse();
+    const bad=[...x.r].map(y=>({...y,b:y.o+y.z})).filter(y=>y.b>0).sort((a,b)=>b.b-a.b).slice(0,4);
+    h+=`<tr><td style="min-width:200px"><a href="#q-${x.q.id}" onclick="openQ('${x.q.id}')"><b>${x.q.id}</b></a> ${esc(x.q.ko)}<br><span class="tag">${qtype(x.q)}</span>${x.q.contested?'<span class="tag c">입장 대립</span>':''}</td>
+      <td class="n">${(x.sd*100).toFixed(0)}%p</td><td class="ml">${fmt(hi,"r")}</td><td class="ml">${fmt(lo,"r")}</td><td class="ml">${bad.length?fmt(bad,"b"):"–"}</td></tr>`;
+  }
+  document.getElementById("divtable").innerHTML=h;
+})();
+
+/* 5. 모델 상세 */
+(function(){
+  let h=""; let last="";
+  for(const m of D.models){ if(m.country!==last){ h+=`<span class="sep">${CTRY[m.country]} 개발사</span>`; last=m.country; } h+=`<button data-s="${m.slug}">${esc(m.name)}</button>`; }
+  const el=document.getElementById("mbtns"); el.innerHTML=h;
+  el.onclick=e=>{ const b=e.target.closest("button"); if(b) showProfile(b.dataset.s, false); };
+})();
+function showProfile(slug, scroll=true){
+  const m=M[slug], s=mstat[slug], n=sum(s.all);
+  document.querySelectorAll("#mbtns button").forEach(b=>b.classList.toggle("on",b.dataset.s===slug));
+  const diffs=Qs.map(q=>{ const mine=mr(mq(q,slug)); const others=D.models.filter(x=>x.slug!==slug).map(x=>mr(mq(q,x.slug))); return {q, mine, d:mine-sum(others)/others.length}; });
+  const lower=[...diffs].sort((a,b)=>a.d-b.d).slice(0,6).filter(x=>x.d<-0.05), higher=[...diffs].sort((a,b)=>b.d-a.d).slice(0,6).filter(x=>x.d>0.05);
+  const li=arr=>arr.length? arr.map(x=>`<li><span><a href="#q-${x.q.id}" onclick="openQ('${x.q.id}')"><b>${x.q.id}</b></a> ${esc(x.q.ko)} <span class="pct">(이 모델 ${pc(x.mine,1,0)})</span></span><span class="d ${x.d>0?'up':'down'}">${x.d>0?"+":""}${(x.d*100).toFixed(0)}%p</span></li>`).join("") : `<li><span class="pct">5%p 넘게 차이 나는 질문 없음</span></li>`;
+  let h=`<div class="prof"><h3>${esc(m.name)}</h3><div class="meta">${m.dev} · ${CTRY[m.country]} 개발사 · ${m.size} · ${m.reasoning?"추론형":"비추론형"} · 기준 일치율 ${rankOf[slug]}위 / 27</div>
+    <div class="stats" style="margin-top:0">
+      <div class="stat"><b>${pc(s.all[0]+s.all[1],n)}</b><span>기준 일치율</span></div>
+      <div class="stat"><b>${pc(s.all[3],n)}</b><span>기준과 반대</span></div>
+      <div class="stat"><b>${pc(s.all[4],n)}</b><span>무답변</span></div>
+      <div class="stat"><b>${pc(s.cons,1)}</b><span>일관성</span></div>
+    </div>
+    <h3 style="font-size:16px;margin-top:22px">질문 언어별</h3>
+    <div class="tbl"><table><tr><th>구분</th><th>다섯 분류</th><th class="n">기준 일치율</th><th class="n">반대</th><th class="n">무답변</th><th class="n">답변 수</th></tr>
+    ${[["전체",s.all],["입장형 질문",s.st],["사실형 질문",s.fa],...D.langs.map(l=>[LANG_NAME[l]+"로 물음",s.lg[l]])].map(([k,v])=>`<tr><td>${k}</td><td style="min-width:200px">${bar(v)}</td><td class="n"><b>${pc(v[0]+v[1],sum(v))}</b></td><td class="n">${pc(v[3],sum(v))}</td><td class="n">${pc(v[4],sum(v))}</td><td class="n">${sum(v)}</td></tr>`).join("")}</table></div>
+    <div class="cols2" style="margin-top:22px">
+      <div><h3 style="font-size:16px;margin-top:0">다른 모델보다 기준 일치가 <span class="down">낮은</span> 질문</h3><ul class="diffl">${li(lower)}</ul></div>
+      <div><h3 style="font-size:16px;margin-top:0">다른 모델보다 기준 일치가 <span class="up">높은</span> 질문</h3><ul class="diffl">${li(higher)}</ul></div>
+    </div>
+    <p class="pct">차이 = 이 모델의 기준 일치율 − 나머지 26개 모델 평균 (모든 언어 합산)</p>
+    <h3 style="font-size:16px;margin-top:22px">모든 질문의 10회 답 분포</h3>
+    <div class="tbl"><table><tr><th>질문</th>${D.langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
+  let la="";
+  for(const q of Qs){
+    if(q.id[0]!==la){ h+=`<tr class="grp"><td colspan="5">${AREA[q.id[0]]}</td></tr>`; la=q.id[0]; }
+    h+=`<tr><td><b>${q.id}</b> ${esc(q.ko)}</td>`+D.langs.map(l=>{ const c=q.cells[slug+"|"+l]; return c?`<td class="cell">${squares(c[0],q.id,slug,l)}<small>${esc(Object.entries(c[1]).map(([a,b])=>`${LAB[a]||a} ${b}`).join(" · "))}</small></td>`:"<td></td>"; }).join("")+"</tr>";
+  }
+  h+="</table></div></div>";
+  document.getElementById("prof").innerHTML=h;
+  if(scroll) document.getElementById("profile").scrollIntoView();
+}
+showProfile(ranked[0].slug, false);
+
+/* 6. 국가 */
+(function(){
+  let h=`<tr><th>개발사 국가</th><th class="n">모델 수</th><th>전체</th><th class="n">기준 일치율</th><th>입장형</th><th class="n">일치율</th><th class="n">반대</th><th class="n">무답변</th><th class="n">사실형 정답</th><th class="n">일관성</th></tr>`;
+  for(const c of ["US","KR","CN"]){ const ms=D.models.filter(m=>m.country===c); const a=Z(), st=Z(), fa=Z(); ms.forEach(m=>{add(a,mstat[m.slug].all);add(st,mstat[m.slug].st);add(fa,mstat[m.slug].fa);});
+    const cons=sum(ms.map(m=>mstat[m.slug].cons))/ms.length;
+    h+=`<tr><td><b>${CTRY[c]}</b></td><td class="n">${ms.length}</td><td style="min-width:130px">${bar(a)}</td><td class="n"><b>${pc(a[0]+a[1],sum(a))}</b></td><td style="min-width:130px">${bar(st)}</td><td class="n">${pc(st[0]+st[1],sum(st))}</td><td class="n">${pc(st[3],sum(st))}</td><td class="n">${pc(st[4],sum(st))}</td><td class="n">${pc(fa[0]+fa[1],sum(fa))}</td><td class="n">${pc(cons,1)}</td></tr>`; }
+  document.getElementById("ctrysum").innerHTML=h;
+  const pick=["T01","T04","H01","H02","H04","M01"];
+  let t=`<tr><th>질문</th><th>국가</th>${D.langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
+  for(const id of pick){ const q=QD[id];
+    ["US","KR","CN"].forEach((c,i)=>{ t+=`<tr>${i===0?`<td rowspan="3"><a href="#q-${id}" onclick="openQ('${id}')"><b>${id}</b></a> ${esc(q.ko)}</td>`:""}<td>${CTRY[c]}</td>`+
+      D.langs.map(l=>{const v=aggQ(q,(m,ll)=>m.country===c&&ll===l); return `<td class="hc">${bar(v)}<span class="pct">일치 ${pc(v[0]+v[1],sum(v),0)} · 반대 ${pc(v[3],sum(v),0)}</span></td>`;}).join("")+"</tr>"; }); }
+  document.getElementById("ctryq").innerHTML=t;
+})();
+
+/* 7. 규모 */
+(function(){
+  const g={}; for(const sz of ["대형","중형","소형"]) g[sz]={all:Z(),st:Z(),fa:Z(),n:0};
+  for(const m of D.models){ const s=mstat[m.slug]; add(g[m.size].all,s.all); add(g[m.size].st,s.st); add(g[m.size].fa,s.fa); g[m.size].n++; }
+  let h=`<tr><th>규모</th><th class="n">모델 수</th><th>전체</th><th class="n">일치율</th><th>입장형</th><th class="n">일치율</th><th class="n">반대</th><th>사실형</th><th class="n">정답</th><th class="n">오답</th></tr>`;
+  for(const [k,v] of Object.entries(g)) h+=`<tr><td><b>${k}</b></td><td class="n">${v.n}</td><td style="min-width:120px">${bar(v.all)}</td><td class="n">${pc(v.all[0]+v.all[1],sum(v.all))}</td>
+    <td style="min-width:120px">${bar(v.st)}</td><td class="n">${pc(v.st[0]+v.st[1],sum(v.st))}</td><td class="n">${pc(v.st[3],sum(v.st))}</td>
+    <td style="min-width:120px">${bar(v.fa)}</td><td class="n">${pc(v.fa[0]+v.fa[1],sum(v.fa))}</td><td class="n">${pc(v.fa[3],sum(v.fa))}</td></tr>`;
+  document.getElementById("sizetable").innerHTML=h;
+  const fam={}; for(const m of D.models) (fam[m.dev]=fam[m.dev]||[]).push(m);
+  let f=`<tr><th>개발사</th><th>대형</th><th>중형</th><th>소형</th><th class="n">대형−소형 (사실형)</th></tr>`;
+  for(const [dev,ms] of Object.entries(fam)){ if(ms.length<2) continue;
+    const cell=sz=>ms.filter(m=>m.size===sz).map(m=>{const s=mstat[m.slug]; return `<div><a href="#profile" data-pm="${m.slug}">${esc(m.name)}</a> <b>${pc(s.all[0]+s.all[1],sum(s.all))}</b> <span class="pct">(${pc(s.all[3],sum(s.all))})</span></div>`;}).join("")||"–";
+    const big=ms.find(m=>m.size==="대형"), small=ms.find(m=>m.size==="소형");
+    const dfa = big&&small ? ((mr(mstat[big.slug].fa)-mr(mstat[small.slug].fa))*100) : null;
+    f+=`<tr><td><b>${dev}</b></td><td>${cell("대형")}</td><td>${cell("중형")}</td><td>${cell("소형")}</td><td class="n">${dfa===null?"–":(dfa>0?"+":"")+dfa.toFixed(1)+"%p"}</td></tr>`; }
+  document.getElementById("famtable").innerHTML=f;
+})();
+
+/* 8. 질문별 */
 const qfilter = document.getElementById("qfilter");
 let area = "ALL";
 qfilter.innerHTML = [["ALL","전체"],...Object.entries(AREA)].map(([k,v])=>`<button data-a="${k}" class="${k==='ALL'?'on':''}">${v}</button>`).join("")
@@ -340,7 +547,7 @@ function renderQ(){
       <span class="qbars">${lb}</span>
     </summary><div class="qbody"></div></details>`;
   }).join("");
-  el.querySelectorAll("details.q").forEach(d=>d.addEventListener("toggle",()=>{ if(d.open && !d.dataset.r){ d.dataset.r=1; d.querySelector(".qbody").innerHTML=qDetail(D.questions.find(x=>x.id===d.dataset.q)); }}));
+  el.querySelectorAll("details.q").forEach(d=>d.addEventListener("toggle",()=>{ if(d.open && !d.dataset.r){ d.dataset.r=1; d.querySelector(".qbody").innerHTML=qDetail(QD[d.dataset.q]); }}));
 }
 function qDetail(q){
   const langs = D.langs.filter(l=>q[l]);
@@ -355,16 +562,14 @@ function qDetail(q){
       ${q.note?`<div style="margin-top:6px;color:var(--ink3)">${esc(q.note)}</div>`:""}</dd></div>
     <div><dt>전체 라벨 분포 (${tot}건)</dt><dd>${Object.entries(allLabels).sort((a,b)=>b[1]-a[1]).map(([l,n])=>`${LAB[l]||l} ${pc(n,tot)}`).join(" · ")}</dd></div>
   </dl>`;
-  h += `<div class="tbl"><table><tr><th>모델</th>${langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
-  let last="";
-  for(const m of D.models){
-    if(m.country!==last){ h+=`<tr class="grp"><td colspan="${langs.length+1}">${CTRY[m.country]} 개발사</td></tr>`; last=m.country; }
-    h += `<tr><td class="mname">${esc(m.name)}<small>${m.size}</small></td>`;
+  h += `<div class="tbl"><table><tr><th>모델 (기준 일치율 순)</th><th class="n">이 질문 일치율</th>${langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
+  const ms=[...D.models].sort((a,b)=>mr(mq(q,b.slug))-mr(mq(q,a.slug)));
+  for(const m of ms){
+    h += `<tr><td class="mname"><a href="#profile" data-pm="${m.slug}">${esc(m.name)}</a><small>${CTRY[m.country]} · ${m.size}</small></td><td class="n">${pc(mr(mq(q,m.slug)),1,0)}</td>`;
     for(const l of langs){
       const c=q.cells[m.slug+"|"+l]; if(!c){ h+="<td></td>"; continue; }
-      const sq=[]; c[0].forEach((n,i)=>{ for(let k=0;k<n;k++) sq.push(`<i style="background:${col(CATS[i])}"></i>`); });
       const top=Object.entries(c[1]).map(([a,b])=>`${LAB[a]||a} ${b}`).join(" · ");
-      h += `<td class="cell"><span class="sq" data-q="${q.id}" data-m="${m.slug}" data-l="${l}" title="답변 원문 보기">${sq.join("")}</span><small>${esc(top)}</small></td>`;
+      h += `<td class="cell">${squares(c[0],q.id,m.slug,l)}<small>${esc(top)}</small></td>`;
     }
     h += "</tr>";
   }
@@ -372,6 +577,7 @@ function qDetail(q){
   return h;
 }
 renderQ();
+function openQ(id){ area="ALL"; qfilter.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.a==="ALL")); renderQ(); const d=document.getElementById("q-"+id); d.open=true; }
 
 /* 답변 원문 모달 */
 const cache={};
@@ -380,17 +586,19 @@ document.getElementById("mclose").onclick=()=>modal.classList.remove("on");
 modal.onclick=e=>{ if(e.target===modal) modal.classList.remove("on"); };
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") modal.classList.remove("on"); });
 document.addEventListener("click", async e=>{
-  const s=e.target.closest(".sq"); if(!s) return;
-  const q=D.questions.find(x=>x.id===s.dataset.q), m=M[s.dataset.m], l=s.dataset.l;
-  document.getElementById("mtitle").innerHTML=`${esc(m.name)} · ${LANG_NAME[l]} · ${q.id}<small>${esc(q[l])}</small>`;
+  const s=e.target.closest(".sq,.hc2"); if(!s) return;
+  const q=QD[s.dataset.q], m=M[s.dataset.m], l=s.dataset.l;
+  document.getElementById("mtitle").innerHTML=`${esc(m.name)} · ${l?LANG_NAME[l]:"모든 언어"} · ${q.id}<small>${esc(l?q[l]:q.ko)}</small>`;
   const body=document.getElementById("mbody"); body.innerHTML="<p>불러오는 중…</p>"; modal.classList.add("on");
   try{
     if(!cache[q.id]){ const r=await fetch(`data/answers/${q.id}.jsonl`); if(!r.ok) throw 0; cache[q.id]=(await r.text()).trim().split("\n").map(JSON.parse); }
-    const rows=cache[q.id].filter(r=>r.model_slug===m.slug && r.lang===l).sort((a,b)=>a.trial-b.trial);
-    body.innerHTML=rows.map(r=>`<div class="ans"><div class="h"><b>${r.trial}회</b>
+    const lo={ko:0,en:1,zh:2,ja:3};
+    const rows=cache[q.id].filter(r=>r.model_slug===m.slug && (!l||r.lang===l)).sort((a,b)=>lo[a.lang]-lo[b.lang]||a.trial-b.trial);
+    body.innerHTML=rows.map(r=>`<div class="ans"><div class="h"><b>${l?"":LANG_NAME[r.lang]+" "}${r.trial}회</b>
       <span class="chip" style="background:${col(r.category)};${r.category==='neutral'?'color:var(--ink)':''}">${CAT_NAME[r.category]}</span>
       <span class="tag">라벨: ${LAB[r.label]||r.label}</span>${r.flags.map(f=>`<span class="tag">${FLAG[f]||f}</span>`).join("")}
       ${r.finish_reason && r.finish_reason!=='stop' && r.finish_reason!=='end_turn' ? `<span class="tag">종료: ${esc(r.finish_reason)}</span>`:""}</div>
+      ${!l&&r.prompt?`<div class="j" style="margin:0 0 6px">질문: ${esc(r.prompt)}</div>`:""}
       <pre>${esc(r.answer)||"(빈 답변)"}</pre>
       ${r.judge_evidence?`<div class="j">판정 근거 인용: “${esc(r.judge_evidence)}”</div>`:""}
       ${r.judge_notes?`<div class="j">판정 메모: ${esc(r.judge_notes)}</div>`:""}</div>`).join("");
@@ -399,57 +607,11 @@ document.addEventListener("click", async e=>{
   }
 });
 
-/* 모델별 */
-const mstat = {};
-for(const m of D.models){
-  const all=[0,0,0,0,0], st=[0,0,0,0,0], fa=[0,0,0,0,0]; let cs=0, cn=0;
-  for(const q of Qs) for(const l of D.langs){ const c=q.cells[m.slug+"|"+l]; if(!c) continue; add(all,c[0]); add(q.label_set==="FACT"?fa:st,c[0]); cs+=Math.max(...c[0])/sum(c[0]); cn++; }
-  mstat[m.slug]={all,st,fa,cons:cs/cn};
-}
-const MCOLS=[
-  ["name","모델",m=>m.name,false],["dev","개발사",m=>m.dev,false],["size","규모",m=>"대중소".indexOf(m.size[0]),false],
-  ["bar","다섯 분류 (전체)",null,false],
-  ["match","기준 일치율",m=>mr(mstat[m.slug].all),true],["opp","반대",m=>mstat[m.slug].all[3]/sum(mstat[m.slug].all),true],
-  ["none","무답변",m=>mstat[m.slug].all[4]/sum(mstat[m.slug].all),true],
-  ["st","입장형 일치율",m=>mr(mstat[m.slug].st),true],["fa","사실형 일치율",m=>mr(mstat[m.slug].fa),true],["cons","일관성",m=>mstat[m.slug].cons,true]];
-let msort="match";
-function renderM(){
-  const c=MCOLS.find(x=>x[0]===msort);
-  const rows=[...D.models].sort((a,b)=>{ const x=c[2](a), y=c[2](b); return c[3]? y-x : (x>y?1:x<y?-1:0); });
-  let h="<tr>"+MCOLS.map(([k,t,f,num])=>`<th class="${f?'sort':''} ${num?'n':''} ${k===msort?'on':''}" data-k="${k}">${t}</th>`).join("")+"</tr>";
-  for(const m of rows){ const s=mstat[m.slug];
-    h+=`<tr><td class="mname">${esc(m.name)}</td><td>${m.dev} <span class="pct">${CTRY[m.country]}</span></td><td>${m.size}</td><td style="min-width:160px">${bar(s.all)}</td>
-      <td class="n"><b>${pc(s.all[0]+s.all[1],sum(s.all))}</b></td><td class="n">${pc(s.all[3],sum(s.all))}</td><td class="n">${pc(s.all[4],sum(s.all))}</td>
-      <td class="n">${pc(s.st[0]+s.st[1],sum(s.st))}</td><td class="n">${pc(s.fa[0]+s.fa[1],sum(s.fa))}</td><td class="n">${pc(s.cons,1)}</td></tr>`; }
-  const t=document.getElementById("mtable"); t.innerHTML=h;
-  t.querySelectorAll("th.sort").forEach(th=>th.onclick=()=>{ msort=th.dataset.k; renderM(); });
-}
-renderM();
-
-/* 규모 */
-(function(){
-  const g={}; for(const sz of ["대형","중형","소형"]) g[sz]={all:[0,0,0,0,0],st:[0,0,0,0,0],fa:[0,0,0,0,0],n:0};
-  for(const m of D.models){ const s=mstat[m.slug]; add(g[m.size].all,s.all); add(g[m.size].st,s.st); add(g[m.size].fa,s.fa); g[m.size].n++; }
-  let h=`<tr><th>규모</th><th class="n">모델 수</th><th>전체</th><th class="n">일치율</th><th>입장형</th><th class="n">일치율</th><th class="n">반대</th><th>사실형</th><th class="n">정답</th><th class="n">오답</th></tr>`;
-  for(const [k,v] of Object.entries(g)) h+=`<tr><td><b>${k}</b></td><td class="n">${v.n}</td><td style="min-width:120px">${bar(v.all)}</td><td class="n">${pc(v.all[0]+v.all[1],sum(v.all))}</td>
-    <td style="min-width:120px">${bar(v.st)}</td><td class="n">${pc(v.st[0]+v.st[1],sum(v.st))}</td><td class="n">${pc(v.st[3],sum(v.st))}</td>
-    <td style="min-width:120px">${bar(v.fa)}</td><td class="n">${pc(v.fa[0]+v.fa[1],sum(v.fa))}</td><td class="n">${pc(v.fa[3],sum(v.fa))}</td></tr>`;
-  document.getElementById("sizetable").innerHTML=h;
-  const fam={}; for(const m of D.models) (fam[m.dev]=fam[m.dev]||[]).push(m);
-  let f=`<tr><th>개발사</th><th>대형</th><th>중형</th><th>소형</th><th class="n">대형−소형 (사실형)</th></tr>`;
-  for(const [dev,ms] of Object.entries(fam)){ if(ms.length<2) continue;
-    const cell=sz=>ms.filter(m=>m.size===sz).map(m=>{const s=mstat[m.slug]; return `<div>${esc(m.name)} <b>${pc(s.all[0]+s.all[1],sum(s.all))}</b> <span class="pct">(${pc(s.all[3],sum(s.all))})</span></div>`;}).join("")||"–";
-    const big=ms.find(m=>m.size==="대형"), small=ms.find(m=>m.size==="소형");
-    const dfa = big&&small ? ((mr(mstat[big.slug].fa)-mr(mstat[small.slug].fa))*100) : null;
-    f+=`<tr><td><b>${dev}</b></td><td>${cell("대형")}</td><td>${cell("중형")}</td><td>${cell("소형")}</td><td class="n">${dfa===null?"–":(dfa>0?"+":"")+dfa.toFixed(1)+"%p"}</td></tr>`; }
-  document.getElementById("famtable").innerHTML=f;
-})();
-
-/* 언어 */
+/* 9. 언어 */
 const ML = Qs.filter(q=>q.zh);
 (function(){
   let h=`<tr><th>질문 언어</th><th>다섯 분류</th><th class="n">기준 일치율</th><th class="n">중립·유보</th><th class="n">반대</th><th class="n">무답변</th></tr>`;
-  for(const l of D.langs){ const v=[0,0,0,0,0]; ML.forEach(q=>add(v,aggQ(q,(m,ll)=>ll===l)));
+  for(const l of D.langs){ const v=Z(); ML.forEach(q=>add(v,aggQ(q,(m,ll)=>ll===l)));
     h+=`<tr><td><b>${LANG_NAME[l]}</b></td><td style="min-width:220px">${bar(v,"lg")}</td><td class="n"><b>${pc(v[0]+v[1],sum(v))}</b></td><td class="n">${pc(v[2],sum(v))}</td><td class="n">${pc(v[3],sum(v))}</td><td class="n">${pc(v[4],sum(v))}</td></tr>`; }
   document.getElementById("langsum").innerHTML=h;
   let t=`<tr><th>질문</th>${D.langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
@@ -457,26 +619,8 @@ const ML = Qs.filter(q=>q.zh);
       return `<td class="hc">${bar(v)}<span class="pct">일치 ${pc(v[0]+v[1],sum(v),0)} · 반대 ${pc(v[3],sum(v),0)}</span></td>`;}).join("")+"</tr>"; }
   document.getElementById("langtable").innerHTML=t;
 })();
-function openQ(id){ area="ALL"; qfilter.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.a==="ALL")); renderQ(); const d=document.getElementById("q-"+id); d.open=true; }
 
-/* 국가 */
-(function(){
-  let h=`<tr><th>개발사 국가</th>${D.langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}<th>4개 언어 합계</th></tr>`;
-  for(const c of ["US","KR","CN"]){
-    const cells=D.langs.map(l=>{ const v=[0,0,0,0,0]; ML.forEach(q=>add(v,aggQ(q,(m,ll)=>m.country===c&&ll===l))); return v; });
-    const tot=cells.reduce((a,b)=>add(a,[...b]),[0,0,0,0,0]);
-    h+=`<tr><td><b>${CTRY[c]}</b> <span class="pct">${D.models.filter(m=>m.country===c).length}개</span></td>`+[...cells,tot].map(v=>`<td class="hc">${bar(v)}<span class="pct">일치 ${pc(v[0]+v[1],sum(v),0)} · 반대 ${pc(v[3],sum(v),0)} · 무답 ${pc(v[4],sum(v),0)}</span></td>`).join("")+"</tr>";
-  }
-  document.getElementById("ctrytable").innerHTML=h;
-  const pick=["T01","T04","H01","H02","H04","M01"];
-  let t=`<tr><th>질문</th><th>국가</th>${D.langs.map(l=>`<th>${LANG_NAME[l]}</th>`).join("")}</tr>`;
-  for(const id of pick){ const q=D.questions.find(x=>x.id===id);
-    ["US","KR","CN"].forEach((c,i)=>{ t+=`<tr>${i===0?`<td rowspan="3"><a href="#q-${id}" onclick="openQ('${id}')"><b>${id}</b></a> ${esc(q.ko)}</td>`:""}<td>${CTRY[c]}</td>`+
-      D.langs.map(l=>{const v=aggQ(q,(m,ll)=>m.country===c&&ll===l); return `<td class="hc">${bar(v)}<span class="pct">일치 ${pc(v[0]+v[1],sum(v),0)} · 반대 ${pc(v[3],sum(v),0)}</span></td>`;}).join("")+"</tr>"; }); }
-  document.getElementById("ctryq").innerHTML=t;
-})();
-
-/* 방법: 라벨 묶음, 모델 목록, 변환 규칙 */
+/* 10. 방법 */
 (function(){
   const LS={DOKDO_OWNERSHIP:"T01, T02",SEA_NAME:"T04, T05",HISTORY_ATTRIBUTION:"H01, H02",ORIGIN:"C01, C03, C07–C09, P01–P04",YES_NO:"H04–H07, M01–M03, M05–M07, M10, C02, C04–C06, P05",FACT:"T03, T06–T10, H03, H08–H10, M04, M08, M09, C10, P06–P10"};
   const DEF={
